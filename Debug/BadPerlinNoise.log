@@ -1,3 +1,0 @@
-﻿  BadPerlinNoise.cpp
-C:\Users\billy\Desktop\apps\BadPerlinNoise\BadPerlinNoise.cpp(13,15): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  BadPerlinNoise.vcxproj -> C:\Users\billy\Desktop\apps\BadPerlinNoise\x64\Debug\BadPerlinNoise.exe
