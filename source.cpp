@@ -12,39 +12,48 @@ int main(int argc, char** argv)
 {
     srand(time(0));
 
-    std::vector<int> randGen;
-
-    int start;
-    int length;
-    int range;
-
     printf("Bad perlin noise (with bugs)\n\n");
 
     printf("Please input numbers only, this is C++ \n\n");
 
-    printf("Starting number (The first number will be in range of this number):\n");
-    scanf_s("%i", &start);
-    printf("Length (How many numbers):\n");
-    scanf_s("%i", &length);
-    printf("Range (What is the range of randomness): \n");
-    scanf_s("%i", &range);
-
-    printf("Here we go\n\n");
-
-    //This block is where the magic begins
+    for (int i = 1; i > 0; i++)
     {
-        randGen.push_back(start + getRange(range));
-
-        for (int i = 1; i < length + 1; i++)
+        try
         {
-            randGen.push_back(randGen[i - 1] + getRange(range));
-        }
+            std::vector<int> randGen;
 
-        for (int i = 0; i < length - 1; i++)
+            int start;
+            int length;
+            int range;
+
+            printf("\n\nStarting number (The first number will be in range of this number):\n");
+            scanf_s("%i", &start);
+            printf("Length (How many numbers):\n");
+            scanf_s("%i", &length);
+            printf("Range (What is the range of randomness): \n");
+            scanf_s("%i", &range);
+
+            printf("Here we go\n\n");
+
+            //This block is where the magic begins
+            {
+                randGen.push_back(start + getRange(range));
+
+                for (int i2 = 1; i2 < length + 1; i2++)
+                {
+                    randGen.push_back(randGen[i2 - 1] + getRange(range));
+                }
+
+                for (int i2 = 0; i2 < length - 1; i2++)
+                {
+                    printf("%i, ", randGen[i2]);
+                }
+                printf("%i", randGen[randGen.size() - 1]);
+                }
+            }
+        catch(...)
         {
-            printf("%i, ", randGen[i]);
+            continue;
         }
-        printf("%i", randGen[randGen.size() - 1]);
     }
-
 }
