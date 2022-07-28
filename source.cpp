@@ -35,7 +35,7 @@ int main(int argc, char** argv)
 
             printf("Here we go\n\n");
 
-            randGen.push_back(start + getRange(range));
+            randGen.push_back(start);
 
             for (int i2 = 1; i2 < length + 1; i2++)
             {
