@@ -16,7 +16,7 @@ int main(int argc, char** argv)
 
     printf("Please input numbers only, this is C++ \n\n");
 
-    for (int i = 1; i > 0; i++)
+    while (1)
     {
         try
         {
@@ -35,21 +35,18 @@ int main(int argc, char** argv)
 
             printf("Here we go\n\n");
 
-            //This block is where the magic begins
+            randGen.push_back(start + getRange(range));
+
+            for (int i2 = 1; i2 < length + 1; i2++)
             {
-                randGen.push_back(start + getRange(range));
-
-                for (int i2 = 1; i2 < length + 1; i2++)
-                {
                     randGen.push_back(randGen[i2 - 1] + getRange(range));
-                }
+            }
 
-                for (int i2 = 0; i2 < length - 1; i2++)
-                {
-                    printf("%i, ", randGen[i2]);
-                }
-                printf("%i", randGen[randGen.size() - 1]);
-                }
+            for (int i2 = 0; i2 < length - 1; i2++)
+            {
+                printf("%i, ", randGen[i2]);
+            }
+            printf("%i", randGen[randGen.size() - 1]);        
             }
         catch(...)
         {
