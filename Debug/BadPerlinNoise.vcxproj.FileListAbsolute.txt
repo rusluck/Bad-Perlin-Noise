@@ -1,0 +1,2 @@
+C:\Users\billy\Desktop\apps\BadPerlinNoise\x64\Debug\BadPerlinNoise.exe
+C:\Users\billy\Desktop\programming\projects\BadPerlinNoise\x64\Debug\BadPerlinNoise.exe
